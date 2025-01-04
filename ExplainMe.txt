@@ -1,0 +1,18 @@
+>__filename and __dirname in ES Modules: These are emulated using fileURLToPath(import.meta.url) and path.dirname(__filename) 
+since they’re not natively available in ES Modules.They are used to resolve the current file's path and directory for handling 
+relative paths.
+
+>dotenv.config(): Loads environment variables from a .env file into process.env to securely manage configurations like API keys, database credentials, and ports without hardcoding them.
+
+>Purpose: Together, they set up path management (__filename, __dirname) and environment variable handling (dotenv) in modern ES Module projects, ensuring compatibility and secure configuration.
+
+
+
+
+
+
+
+
+
+
+

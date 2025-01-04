@@ -1,0 +1,110 @@
+/* Signup Container */
+.signup-container {
+    background-color: #f4f1fa; /* Light purple background */
+    color: #4a007e; /* Dark purple text */
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Arial", sans-serif;
+    text-align: center;
+  }
+  
+  /* Heading */
+  .signup-container h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #4a007e;
+  }
+  
+  /* Form */
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Form Group */
+  .form-group {
+    text-align: left;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+  }
+  
+  /* Button */
+  .signup-button {
+    background-color: #6a0dad; /* Dark purple */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .signup-button:hover {
+    background-color: #4a007e; /* Slightly darker purple */
+  }
+  
+  /* Login Link */
+  .login-link {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .login-link a {
+    color: #6a0dad;
+    text-decoration: none;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive */
+  @media (max-width: 500px) {
+    .signup-container {
+      padding: 20px;
+    }
+  }
+
+  .password-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-container input {
+    flex: 1;
+  }
+  
+  .toggle-password {
+    margin-left: 8px;
+    padding: 6px 10px;
+    border: none;
+    background-color: #6a0dad;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .toggle-password:hover {
+    background-color: #5a0bcf;
+  }
+  
+  
