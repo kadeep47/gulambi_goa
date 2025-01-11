@@ -13,6 +13,7 @@
   "dependencies": {
     "@types/react-toastify": "^4.0.2",
     "axios": "^1.7.8",
+    "bcrpyt": "^2.0.0",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
