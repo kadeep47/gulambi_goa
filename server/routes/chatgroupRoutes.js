@@ -1,3 +1,6 @@
+// file name is chatgroupRoutes.js
+
+
 import express from "express";
 import User from "../models/User.js"; // Import user model
 import { Group, Message } from "../models/Chat.js";

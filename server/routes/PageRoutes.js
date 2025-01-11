@@ -1,3 +1,6 @@
+// file name is PageRoutes.js 
+// Utilize multer for image or file uploads related to experiences
+
 import express from "express";
 import multer from "multer";
 import Card from "../models/Card.js"; // Import Card model
