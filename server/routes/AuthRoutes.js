@@ -1,3 +1,6 @@
+// file name is AuthRoutes.js 
+// rate limiting implementation incase of brute force 
+
 import express from "express";
 import User from "../models/User.js"; // Import user model
 import bcrypt from "bcrypt"; // For hashing passwords
