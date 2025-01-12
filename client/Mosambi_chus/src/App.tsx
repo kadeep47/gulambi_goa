@@ -41,3 +41,6 @@ const styles = {
   },
 };
 export default App;
+
+// Purpose of <Router>:
+// The <BrowserRouter> (aliased here as Router) wraps your entire application (or parts of it) to enable the use of routing features like <Routes> and <Link> for navigation.

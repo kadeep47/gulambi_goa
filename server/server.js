@@ -25,7 +25,6 @@ mongoose
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
 // Import and use routes
-// console.log("")
 app.use("/api/page", pageRoutes); // Base route for page-related APIs
 app.use("/auth",authRoutes);
 app.use("/chat",chatgroupRoutes);

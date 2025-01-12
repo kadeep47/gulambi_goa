@@ -14,3 +14,8 @@ createRoot(document.getElementById("root")!).render(
     </AuthProvider>
   </StrictMode>
 );
+
+// Reason to use StrictMode
+// Ensures your app uses the best practices.
+// Warns if any issues arise in components like App or AuthProvider.
+// Promotes future-proof React code.
