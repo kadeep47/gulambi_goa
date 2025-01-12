@@ -16,6 +16,8 @@ const UserSchema = new mongoose.Schema(
       unique: true, // Ensures no duplicate emails
       trim: true,
       lowercase: true,
+                                      // Regex Validation (match)
+                                      // The match property specifies a regular expression (regex) to validate the format of the email.
       match: [
         /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
         "Please enter a valid email address",
@@ -35,3 +37,7 @@ const UserSchema = new mongoose.Schema(
 // Export the model
 const User = mongoose.model("User", UserSchema);
 export default User;
+
+
+// can assign role to a User (user/admin)
+// who will assign the role to the user

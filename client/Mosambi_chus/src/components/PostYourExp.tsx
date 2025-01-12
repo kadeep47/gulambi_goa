@@ -60,7 +60,6 @@ const PostYourExp = (): JSX.Element => {
       console.log(formValues.name);
       console.log(formValues.description);
       console.log(formValues.address);
-      console.log("reached till here");
       console.log(formData);
       // Send POST request to the backend
       const response = await axios.post(
@@ -72,7 +71,7 @@ const PostYourExp = (): JSX.Element => {
           },
         }
       );
-      console.log("reached till here 1");
+
       // Handle success response
 
       handleSuccess("Your experience has been successfully posted.");

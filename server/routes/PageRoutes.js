@@ -8,14 +8,18 @@ import Card from "../models/Card.js"; // Import Card model
 const router = express.Router(); // Create an Express router
 
 // Configure multer for parsing multipart/form-data
+// When a client sends form data that may include files, multer helps parse and process it for easy access in the server.
 const upload = multer();  
 
 // Route: Create a new page
+// Why use upload.none()?
+// You expect multipart/form-data requests but don't need to handle file uploads. Ensures that if files are accidentally sent, they are ignored and not processed.
+// Avoids the unnecessary overhead of configuring file storage for non-file data.
 router.post("/postExperience",upload.none(),  async (req, res) => {
-  console.log("reched till here 2")
+  
   try {
     const { category, name, description, address } = req.body;
-    console.log("reched till here 3")
+    
     // Create a new page document
     console.log(category)
     console.log(name)
@@ -23,9 +27,9 @@ router.post("/postExperience",upload.none(),  async (req, res) => {
     console.log(address)
 
     const newCard = new Card({ category, name, description, address});
-    console.log("reched till here 4");
+    
     await newCard.save(); // Save to MongoDB
-    console.log("reched till here 5");
+    
     res.status(201).json({ message: "Page created successfully", card: newCard });
   } catch (error) {
     res.status(500).json({ error: "Failed to create page" });
@@ -55,3 +59,12 @@ router.get("/", async (req, res) => {
 // });
 
 export default router; // Export the router
+
+
+
+
+
+
+
+
+// Only the user who is logged in can post through postExperience

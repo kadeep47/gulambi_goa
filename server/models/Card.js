@@ -11,3 +11,7 @@ const CardSchema = new mongoose.Schema({
 
 // Export the model as default
 export default mongoose.model("Card", CardSchema);
+
+
+// can add image field to a card
+// can add a status field to a card (approved/pending/reject)

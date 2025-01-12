@@ -34,10 +34,10 @@ export const signupValidation = (req, res, next) => {
       }),
     
   });
-  // console.log("inside the validation func ",req);
+  
   // Validate the request body
   const { error } = schema.validate(req.body, { abortEarly: false });
-  // console.log("error:",error)
+  
   // If validation fails, return an array of error messages
   if (error) {
     const errors = error.details.map((err) => ({
@@ -49,6 +49,23 @@ export const signupValidation = (req, res, next) => {
 
   next(); // If validation succeeds, proceed
 };
+
+
+// Password Validation Requirements (Concise):
+
+// Required Characters:
+// At least 1 uppercase letter (A-Z)
+// At least 1 lowercase letter (a-z)
+// At least 1 digit (0-9)
+// At least 1 special character: @, $, !, %, *, ?, &, -, _
+
+// Length Constraints:
+// Minimum: 6 characters
+// Maximum: 30 characters
+
+// Restrictions:
+// No spaces allowed
+// Only letters, digits, and allowed special characters.
 
 
 

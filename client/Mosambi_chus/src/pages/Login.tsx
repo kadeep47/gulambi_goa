@@ -6,6 +6,7 @@ import { useAuth } from "../context/AuthContext"; // Importing AuthContext
 import "./Login.css"; // Import the CSS file
 
 const Login: React.FC = () => {
+  // initialise the input fields for login
   const [loginInfo, setLoginInfo] = useState<{
     email: string;
     password: string;
@@ -15,9 +16,11 @@ const Login: React.FC = () => {
   });
 
   const navigate = useNavigate();
-  const { setIsLoggedIn, setUserName, setUserEmail } = useAuth(); // Access AuthContext
-  const [showPassword, setShowPassword] = useState(false);
 
+  const { setIsLoggedIn, setUserName, setUserEmail } = useAuth(); // Access AuthContext
+
+  // for to show password option on password filed
+  const [showPassword, setShowPassword] = useState(false);
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
   };

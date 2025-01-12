@@ -58,10 +58,12 @@ router.post("/login", loginValidation, async (req, res) => {
       }
   
       // Generate a JWT token
+      //  A JWT token is generated using jwt.sign() with a payload (user ID & email), a secret key (process.env.JWT_SECRET), and an expiry time (expiresIn: "1h").
+      // The token is sent to the client for authentication and must be included in future requests (e.g., via Authorization header).
       const token = jwt.sign(
         { id: user._id, email: user.email },
         process.env.JWT_SECRET,
-        { expiresIn: "1h" }
+        { expiresIn: "3h" }
       );
   
       // Respond with success and token
@@ -82,30 +84,30 @@ router.post("/login", loginValidation, async (req, res) => {
 });
 
 // Route: Validate Access Token
-router.get("/validate", (req, res) => {
-  const token = req.headers.authorization?.split(" ")[1]; // Extract token from header
+// router.get("/validate", (req, res) => {
+//   const token = req.headers.authorization?.split(" ")[1]; // Extract token from header
 
-  if (!token) {
-    return res.status(401).json({ success: false, message: "Token missing" });
-  }
+//   if (!token) {
+//     return res.status(401).json({ success: false, message: "Token missing" });
+//   }
 
-  try {
-    // Verify the access token
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+//   try {
+//     // Verify the access token
+//     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    res.status(200).json({
-      success: true,
-      message: "Token is valid",
-      user: {
-        id: decoded.id,
-        email: decoded.email,
-      },
-    });
-  } catch (error) {
-    console.error("Token validation error:", error.message);
-    res.status(401).json({ success: false, message: "Invalid or expired token" });
-  }
-});
+//     res.status(200).json({
+//       success: true,
+//       message: "Token is valid",
+//       user: {
+//         id: decoded.id,
+//         email: decoded.email,
+//       },
+//     });
+//   } catch (error) {
+//     console.error("Token validation error:", error.message);
+//     res.status(401).json({ success: false, message: "Invalid or expired token" });
+//   }
+// });
 
 
 export default router; 
